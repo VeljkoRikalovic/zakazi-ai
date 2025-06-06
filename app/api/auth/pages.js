@@ -10,12 +10,16 @@ export default async function handler(req, res) {
     return res.status(200).json(saloni);
   }
   if (req.method === "POST") {
-    const { ime, urlSlug, radnoVreme, bookingLink } = req.body;
+    const { id, ime, urlSlug, radnoVreme, email, telefon, bookingLink } =
+      req.body;
     try {
       const noviSalon = await Salon.create({
+        id,
         ime,
         urlSlug,
         radnoVreme,
+        email,
+        telefon,
         bookingLink,
       });
       return res.status(201).json(noviSalon);

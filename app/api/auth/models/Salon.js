@@ -14,4 +14,4 @@ const SalonSchema = new mongoose.Schema({
   bookingLink: { type: String },
 });
 
-export default mongoose.models.Salon || mongoose.model("Salon", SalonSchema);
+export default mongoose.models.User || mongoose.model("User", SalonSchema);
